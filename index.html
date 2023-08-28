@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Difícil Recusar</title>
+  <link rel="icon" href="./imagem/icons8-lábios-48.png" type="image/x-icon">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: white;
+      color: blue;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+    }
+
+    #nao:hover {
+      position: absolute;
+      left: calc(100% * random());
+      top: calc(100% * random());
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2> POSSO TE BEIJAR ?</h2>
+    <button class="button" id="sim">Sim</button>
+    <button class="button" id="nao">Não</button>
+  </div>
+
+  <script>
+    const naoButton = document.getElementById('nao');
+    const simButton = document.getElementById('sim');
+
+    naoButton.addEventListener('mouseover', () => {
+      naoButton.style.position = 'absolute';
+      naoButton.style.left = `${Math.random() * 100}%`;
+      naoButton.style.top = `${Math.random() * 100}%`;
+    });
+
+    simButton.addEventListener('click', () => {
+      alert('VAI SER PESSOA MAIS FELIZ');
+    });
+  </script>
+</body>
+</html>
